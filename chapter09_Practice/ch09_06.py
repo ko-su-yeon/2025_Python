@@ -1,0 +1,25 @@
+class BankAccount(object):
+
+    def __init__(self, name, number, balance):
+        self.name = name
+        self.number = number
+        self.balance = balance
+
+    def deposit(self,amount):
+        self.balance += amount
+
+    def withdraw(self,amount):
+        if self.balance >= amount :
+            self.balance -= amount
+            print("인출 성공")
+        else:
+            print("잔액 부족")
+
+
+user1 = BankAccount("chung","1111111",100)
+print("초기 잔고:", user1.balance)
+user1.deposit(500)
+print("저축 후 잔고:", user1.balance)
+user1.withdraw(2000)
+print("인출 후 잔고:", user1.balance)
+user1.withdraw(1000)
